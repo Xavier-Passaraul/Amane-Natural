@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reservar turno | Amane Spa</title>
+
+<link rel="stylesheet" href="reserva.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Reservar turno</h1>
+
+<div class="calendar">
+<input type="date" id="fecha">
+</div>
+
+<h2>Horarios</h2>
+
+<div id="horarios" class="horarios"></div>
+
+<form id="formReserva">
+
+<input type="text" id="nombre" placeholder="Nombre completo" required>
+
+<input type="email" id="email" placeholder="Correo electrónico" required>
+
+<input type="tel" id="telefono" placeholder="Teléfono / WhatsApp" required>
+
+<select id="masaje">
+
+<option>Masaje relajante</option>
+<option>Masaje descontracturante</option>
+<option>Piedras calientes</option>
+<option>Drenaje linfático</option>
+
+</select>
+
+<textarea id="salud"
+placeholder="¿Tenés alguna lesión, cirugía reciente, enfermedad o afección que debamos saber antes del masaje?"
+rows="4"></textarea>
+
+<input type="hidden" id="hora">
+
+<button type="submit">Confirmar reserva</button>
+
+</form>
+
+</div>
+
+<script src="reservar.js"></script>
+
+</body>
+</html>

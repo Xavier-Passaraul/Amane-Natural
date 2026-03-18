@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Amane</title>
+    <link rel="stylesheet" href="productos.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="img/fondo.jpg" alt="Amane">
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="consejos.html">Consejos</a></li>
+                    <li><a href="sobre.html">Sobre Amane</a></li>
+                    <li><a href="masajes.html">Masajes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="productos">
+        <h1>Nuestros Productos</h1>
+
+        <div class="productos-grid">
+            <!-- Producto 1 -->
+            <div class="producto" onclick="abrirModal(
+                'Crema Hidratante', 
+                'img/crema-hidratante.jpeg', 
+                'Crema Hidratante formulada con el poder del colágeno y ácido hialurónico, garantiza una piel suave, tersa y perfectamente hidratada.', 
+                '$5.000,00', 
+                '<li>Hidratación profunda</li><li>Textura ligera</li><li>Para todo tipo de piel</li><li>Absorción rápida</li>')">
+                <img src="img/crema-hidratante.jpeg">
+                <h3>Crema Hidratante</h3>
+                <p>Hidratación profunda para todo tipo de piel.</p>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="producto" onclick="abrirModal(
+                'Noctéa Balance Repair', 
+                'img/p2.jpg', 
+                'Crema facial nocturna renovadora y reguladora. Formulada con niacinamida, vitamina A y vitamina E para equilibrar la piel.', 
+                '$6.500,00', 
+                '<li>Equilibra la piel</li><li>Mejora la textura</li><li>Reduce imperfecciones</li>')">
+                <img src="img/p2.jpg">
+                <h3>Noctéa Balance Repair</h3>
+                <p>Crema facial nocturna renovadora y reguladora...</p>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="producto" onclick="abrirModal(
+                'Protector Solar', 
+                'img/p3.jpg', 
+                'Protección SPF 50 contra rayos UV. Ideal para uso diario y todo tipo de piel.', 
+                '$4.800,00', 
+                '<li>Protección SPF 50</li><li>No grasoso</li><li>Resistente al agua</li>')">
+                <img src="img/p3.jpg">
+                <h3>Protector Solar</h3>
+                <p>Protección SPF 50 contra rayos UV.</p>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="producto" onclick="abrirModal(
+                'Crema Reparadora', 
+                'img/p4.jpg', 
+                'Regenera y nutre la piel dañada con una fórmula rica en lípidos.', 
+                '$5.200,00', 
+                '<li>Regeneración celular</li><li>Nutrición intensa</li>')">
+                <img src="img/p4.jpg">
+                <h3>Crema Reparadora</h3>
+                <p>Regenera y nutre la piel dañada.</p>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="producto" onclick="abrirModal(
+                'Gel Limpiador', 
+                'img/p5.jpg', 
+                'Limpieza profunda para piel grasa sin resecar el rostro.', 
+                '$3.900,00', 
+                '<li>Limpieza profunda</li><li>Control de brillo</li>')">
+                <img src="img/p5.jpg">
+                <h3>Gel Limpiador</h3>
+                <p>Limpieza profunda para piel grasa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTRUCTURA DEL MODAL ÚNICO (Al final de la sección) -->
+    <div id="modal-producto" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-img-container">
+                    <img id="modal-img" src="" alt="Producto">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-titulo"></h2>
+                    <p id="modal-precio" class="precio-modal"></p>
+                    <p id="modal-desc"></p>
+                    <div class="beneficios-seccion">
+                        <h3>Beneficios</h3>
+                        <ul id="modal-beneficios"></ul>
+                    </div>
+                        <button type="button" onclick="comprar()" class="btn-comprar">Comprar ahora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Envíos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Empresa</h3>
+                <ul>
+                    <li><a href="#">Sobre Amane</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Redes</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copy">© 2026 AMANE</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

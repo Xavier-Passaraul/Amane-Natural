@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes | [Nombre de tu marca]</title>
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Nunito:wght@400;500;600&display=swap');
+
+    body {
+        font-family: 'Nunito', Arial, sans-serif;
+        line-height: 1.7;
+        max-width: 920px;
+        margin: 60px auto;
+        padding: 0 25px;
+        background: #FDF4F8;          
+        color: #4A2C35;               
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.6rem;
+        color: #D16A8F;               
+        text-align: center;
+        margin-bottom: 50px;
+        letter-spacing: 0.5px;
+        position: relative;
+    }
+
+    h1::after {
+        content: '';
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(to right, #E89EB8, #D16A8F);
+        display: block;
+        margin: 15px auto 0;
+        border-radius: 3px;
+    }
+
+    details {
+        margin: 20px 0;
+        border: 1px solid #F5DDE5;
+        border-radius: 16px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 4px 15px rgba(216, 167, 187, 0.12); 
+        transition: all 0.35s ease;
+    }
+
+    details[open] {
+        box-shadow: 0 8px 30px rgba(209, 106, 143, 0.18);
+        border-color: #E89EB8;
+        transform: translateY(-4px);
+    }
+
+    summary {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 600;
+        font-size: 1.15rem;
+        padding: 18px 24px;
+        background: #FDF4F8;
+        color: #4A2C35;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+        list-style: none; 
+    }
+
+    summary::-webkit-details-marker { display: none; } 
+
+    summary::before {
+        content: '＋';
+        position: absolute;
+        right: 24px;
+        font-size: 1.4rem;
+        color: #E89EB8;
+        transition: transform 0.3s ease;
+    }
+
+    details[open] summary::before {
+        transform: rotate(135deg);
+        color: #D16A8F;
+    }
+
+    summary:hover {
+        background: #FBEAF1;
+    }
+
+    details[open] summary {
+        background: linear-gradient(to right, #FDF4F8, #FBEAF1);
+        color: #D16A8F;
+    }
+
+    p {
+        padding: 0 24px 20px;
+        margin: 0;
+        font-size: 1.05rem;
+        color: #5C3F4A;
+    }
+
+    details[open] p {
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Link final */
+    p:last-child {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 1.1rem;
+    }
+
+    p:last-child a {
+        color: #D16A8F;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 8px 20px;
+        border: 2px solid #E89EB8;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+    }
+
+    p:last-child a:hover {
+        background: #D16A8F;
+        color: white;
+        border-color: #D16A8F;
+    }
+</style>
+</head>
+<body>
+
+    <h1>Preguntas Frecuentes</h1>
+
+    <details>
+        <summary>¿Qué limpiador debería utilizar?</summary>
+        <p>Hay muhcos tipos de limpiadores distintos. ¿Piel seca? Elige un limpiador hidratante con base oleosa o con la palabra "bálsamo" en el nombre. Algo lechoso es también una buena idea.</p>
+    </details>
+
+    <details>
+        <summary>¿Se puede sustituir el hidratante con un aceite facial?</summary>
+        <p>Si tienes la piel seca o deshidratada, incluye un aceite facial en tu rutina de belleza. Los aceites vegetales nutren y garantizan la hidratación de la piel.</p>
+    </details>
+
+    <details>
+        <summary>Cuándo debo empezar a usar productos antiedad?</summary>
+        <p>Sentimos darte malas noticias, pero nuestra producción de cólageno y elastina, las bases de una piel suave y flexible, se empieza a relentizar cuando cumplimos los veinte.</p>
+    </details>
+
+    <details>
+        <summary>¿Debería ponerme protección solar todos los días?</summary>
+        <p>Sí, no escatimes en protección solar incluso si el día está nublado.   Los productos con un factor SPF mínimo de 15 ayudan a limitar los efectos nocivos y de envejecimiento del sol, como las arrugas, las líneas de expresión, las pecas (aunque también pueden ser muy favorecedoras) y zonas con decoloraciones</p>
+    </details>
+
+    <details>
+        <summary>¿Puedo usar crema de día por la noche y viceversa?</summary>
+        <p>El objetivo principal de una hidratante es hidratar la piel. Sin embargo, las cremas de día a menudo contarán con ingredientes añadidos que protegen la piel de los elementos, como antioxidantes que combaten los radicales libres del SPF para protegernos del sol y sus efectos nocivos. Las cremas de noche suelen estar pensadas para fomentar el proceso regenerativo de la piel que tiene lugar cuando dormimos. Por eso, pese a que intercambiar las cremas hidratantes no es perjudicial, obtendrás mejores resultados si usas las cremas en su momento correcto.</p>
+    </details>
+
+    <details>
+        <summary>¿Necesito una crema para el contorno de ojos?</summary>
+        <p>Si te preocupan los ojos hinchados, las ojeras y las patas de gallo, una crema para el contorno de ojos es una incorporación inteligente para tu rutina, porque están formuladas para hacer frente específicamente a esos problemas.</p>
+    </details>
+
+    <details>
+        <summary>¿Qué mascarilla debo usar?</summary>
+        <p>Las mascarillas faciales son una ayuda rápida que te ofrece resultados instantáneos, ideales para tener una tez radiante en un momento concreto</p>
+    </details>
+
+    <details>
+        <summary>¿Cómo puedo reducir los poros abiertos?</summary>
+        <p>Cuando nuestra piel produce demasiada grasa, esta sale a la superficie a través de los poros, estirando las paredes epiteliales y dándoles una apariencia más grande. </p>
+    </details>
+
+    <details>
+        <summary>¿Cuánto tiempo necesito usar un producto antes de ver resultados?</summary>
+        <p>A todas nos encantaría ver de inmediato los resultados pero la mayoría de los productos requieren tiempo.</p>
+    </details>
+
+    <details>
+        <summary>¿Qué hago con las manchas de la piel?</summary>
+        <p>Como ya hemos mencionado en otras ocasiones, las tres mejores maneras para evitar las manchas y la decoloración de la piel son: protección solar, protección solar y… protección solar. ¿Y si este consejo llega un poco tarde? Una exfoliación frecuente puede ayudar a tratar los excesos de pigmentación y también existen correctores e hidratantes que te ayudarán.Como ya hemos mencionado en otras ocasiones, las tres mejores maneras para evitar las manchas y la decoloración de la piel son: protección solar, protección solar y… protección solar. ¿Y si este consejo llega un poco tarde? Una exfoliación frecuente puede ayudar a tratar los excesos de pigmentación y también existen correctores e hidratantes que te ayudarán.</p>
+    </details>
+
+    <details>
+        <summary>¿Cómo se pueden eliminar las líneas de expresión?</summary>
+        <p>Las líneas de expresión son básicamente las precursoras de las arrugas (insert sad face here) pero a veces se pueden suavizar con exfoliantes suaves, mucha hidratación (aplicada con productos con ácido hialurónico y bebiendo mucha agua) y buenas dosis de sueño reparador. Si los productos hidratantes no son suficientes, puede ser el momento de empezar a usar productos antiedad.</p>
+    </details>
+
+    <details>
+        <summary>¿Qué productos son mejores para pieles sensibles?</summary>
+        <p>La piel sensible necesita cuidados suaves y evitar ingredientes irritantes como fragancias y alcohol. Busca productos sin componentes sintéticos como parabenos, ftalatos, metilisotiazolinona (MIT), lauril éter sulfato de sodio (SLS) y microplásticos.</p>
+    </details>
+
+    <details>
+        <summary>¿Cómo debo cuidarme la piel si estoy embarazada?</summary>
+        <p>Es mejor evitar los aceites esenciales durante el embarazo, pues las fragancias fuertes pueden provocar nauseas matinales (y eso no le gusta a nadie). Es mejor evitar principios activos fuertes como el retinol, igual que productos irritantes como parabenos, ftalatos, metilisotiazolinona (MIT), lauril éter sulfato de sodio (SLS) y microplásticos. </p>
+    </details>
+
+    <details>
+        <summary>¿Cómo se pueden desmaquillar los ojos sensibles?</summary>
+        <p>Primero, usa un producto suave para eliminar el maquillaje, como Miracle Mild Eye Make-up Remover. Agita la botella: es un producto bifásico que combina agua y aceite, para que sea suave pero eficiente. Aplícalo sobre un algodón, cierra los ojos y presiónalo con cuidado sobre el párpado durante unos 10-15 segundos. Ahora pásalo con cuidado por toda la zona. Dobla la parte limpia del algodón en dos y usa el borde para limpiar las pestañas por encima y por debajo para eliminar cualquier rastro de máscara. Repite el procedimiento en el otro ojo. ¡Es así de fácil!</p>
+    </details>
+
+    <p>¿No encontraste tu pregunta? <a href="mailto:amanenatural0@gmail.com">Escribinos</a></p>
+
+</body>
+</html>
