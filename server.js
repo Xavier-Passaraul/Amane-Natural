@@ -1,3 +1,11 @@
+const { google } = require("googleapis");
+const auth = new google.auth.GoogleAuth({
+  keyFile: "credentials.json",
+  scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+});
+
+const sheets = google.sheets({ version: "v4", auth });
+const SPREADSHEET_ID = "1OgZYIokxnml68m61bAuBSpWEYdJSyPmdH4f0XtlL92g";
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 const XLSX = require("xlsx");
@@ -166,6 +174,26 @@ return res.status(500).json({error:"Error guardando reserva"});
 
 // actualizar excel
 actualizarExcel();
+// ================= GOOGLE SHEETS =================
+
+try {
+
+await sheets.spreadsheets.values.append({
+  spreadsheetId: SPREADSHEET_ID,
+  range: "Sheet1!A:H",
+  valueInputOption: "USER_ENTERED",
+  requestBody: {
+    values: [[nombre,email,telefono,masaje,salud,fecha,hora,"activo"]],
+  },
+});
+
+console.log("📄 Google Sheets actualizado");
+
+} catch(err) {
+
+console.log("Error Google Sheets:", err.message);
+
+}
 
 // ================= EMAIL CLIENTE =================
 

@@ -5,3 +5,4 @@ reservas.db
 .DS_Store
 Thumbs.db
 .vscode/
+credentials.json
