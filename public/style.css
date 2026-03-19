@@ -1,3 +1,4 @@
+/* 1. RESET Y BASE */
 * {
     margin: 0;
     padding: 0;
@@ -9,11 +10,10 @@ body {
     background: #2c3333;
     color: #333;
     line-height: 1.6;
-    /* Espacio para que el header fixed no tape el contenido */
-    padding-top: 110px; 
+    padding-top: 120px; /* Espacio para el header fixed */
 }
 
-/* TOPBAR */
+/* 2. HEADER Y TOPBAR (CORREGIDOS) */
 .topbar {
     background: #A93957;
     color: white;
@@ -22,22 +22,19 @@ body {
     font-size: 14px;
 }
 
-/* HEADER PRINCIPAL */
 header {
     background: white;
     border-bottom: 1px solid #eee;
-    position: fixed;
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    /* Usamos transform para que sea más fluido que "top" */
     transition: transform 0.3s ease-in-out;
 }
 
-/* Esta clase la pone el JS al bajar */
 .header-hidden {
-    transform: translateY(-100%);
+    transform: translateY(-100%); /* Oculta todo el header */
 }
 
 .header-container {
@@ -51,7 +48,7 @@ header {
     height: 45px;
 }
 
-/* MENÚ DESKTOP */
+/* 3. MENÚ DESKTOP */
 .menu ul {
     display: flex;
     list-style: none;
@@ -60,7 +57,7 @@ header {
 
 .menu li {
     background: #f3f7f6;
-    padding: 12px 20px;
+    padding: 15px;
     border-radius: 10px;
     font-size: 15px;
     transition: 0.3s;
@@ -72,12 +69,6 @@ header {
     font-weight: 600;
 }
 
-.menu li:hover {
-    background: #e6efed;
-    transform: scale(1.02);
-}
-
-/* BOTÓN HAMBURGUESA */
 .menu-toggle {
     display: none;
     font-size: 28px;
@@ -85,20 +76,24 @@ header {
     color: #E17070;
 }
 
-/* HERO */
+/* 4. HERO (RECUPERADO) */
 .hero {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     overflow: hidden;
+    margin-top: -120px; /* Para que el video empiece desde arriba de todo */
 }
 
 .hero-video {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: brightness(0.7);
+    filter: brightness(0.6);
 }
 
 .hero-text {
@@ -107,14 +102,26 @@ header {
     left: 10%;
     transform: translateY(-50%);
     color: white;
-    max-width: 500px;
+    max-width: 600px;
     z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: white; /* Recuperamos el color blanco */
+}
+
+.hero-text p {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: white;
 }
 
 .btn {
     background: #E17070;
     color: white;
-    padding: 12px 25px;
+    padding: 12px 30px;
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
@@ -122,38 +129,45 @@ header {
     transition: .3s;
 }
 
-/* SECCIONES GENERALES */
+/* 5. SECCIONES Y GRIDS (RECUPERADOS) */
 section {
-    margin: 40px 5%;
-    background: white;
-    padding: 40px;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    padding: 70px 5%;
+    text-align: center;
 }
 
-/* CATEGORIAS Y CONSEJOS (GRIDS) */
+/* Títulos de secciones en azul como tenías */
+.categorias h2, .consejos h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0a2c6b;
+}
+
 .categorias-grid, .articulos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin-top: 30px;
 }
 
 .categoria, article {
-    background: #f7f7f7;
-    border-radius: 10px;
+    background: white;
+    border-radius: 14px;
     overflow: hidden;
     transition: .3s;
-    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .categoria img, article img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
 }
 
-/* FOOTER */
+.categoria h3, article h3 {
+    padding: 20px;
+    color: #0a2c6b;
+}
+
+/* 6. FOOTER */
 footer {
     background: #111;
     color: #ddd;
@@ -162,23 +176,24 @@ footer {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
 }
 
+footer h3 { color: white; margin-bottom: 15px; }
 footer ul { list-style: none; }
-footer a { color: #E17070; text-decoration: none; }
+footer a { color: #E17070; text-decoration: none; font-size: 14px; }
 
-/* MEDIA QUERIES (MOBILE) */
+/* 7. RESPONSIVE MOBILE (CORREGIDO) */
 @media (max-width: 768px) {
+    body { padding-top: 100px; }
+
     .header-container {
-        flex-direction: row; /* Mantiene logo e icono en la misma línea */
+        flex-direction: row; /* Logo izquierda, Hamburguesa derecha */
         justify-content: space-between;
     }
 
-    .menu-toggle {
-        display: block; /* Muestra la hamburguesa */
-    }
+    .menu-toggle { display: block; }
 
     .menu {
         position: absolute;
@@ -186,19 +201,13 @@ footer a { color: #E17070; text-decoration: none; }
         left: 0;
         width: 100%;
         background: white;
-        display: none; /* Se activa con la clase .active */
-        border-top: 1px solid #eee;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        display: none;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
-    .menu.active {
-        display: block;
-    }
+    .menu.active { display: block; }
 
-    .menu ul {
-        flex-direction: column;
-        gap: 0;
-    }
+    .menu ul { flex-direction: column; gap: 0; }
 
     .menu li {
         width: 100%;
@@ -206,6 +215,7 @@ footer a { color: #E17070; text-decoration: none; }
         border-bottom: 1px solid #eee;
     }
 
-    .hero { height: 50vh; }
-    .hero-text h1 { font-size: 28px; }
+    .hero { height: 60vh; margin-top: -100px; }
+    .hero-text { left: 5%; width: 90%; }
+    .hero-text h1 { font-size: 32px; }
 }
