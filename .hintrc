@@ -8,6 +8,20 @@
       {
         "select-name": "off"
       }
+    ],
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "video[playsinline]"
+        ]
+      }
     ]
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_ff <= 147",
+    "not firefox <= 148"
+  ]
 }

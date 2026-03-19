@@ -1,16 +1,30 @@
 let lastScrollTop = 0;
 const header = document.querySelector("header");
 
+// SCROLL (el tuyo mejorado)
 window.addEventListener("scroll", function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Si bajamos más de 50px, escondemos el header
     if (scrollTop > lastScrollTop && scrollTop > 50) {
-        header.style.top = "-150px"; // Lo saca de pantalla hacia arriba
+        header.style.top = "-150px";
     } else {
-        // Al subir, lo volvemos a mostrar
         header.style.top = "0";
     }
-    
+
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-}, false);
+});
+
+// MENU HAMBURGUESA
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+
+// CERRAR MENU AL HACER CLICK
+document.querySelectorAll(".menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("active");
+    });
+});
