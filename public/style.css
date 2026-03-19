@@ -24,55 +24,72 @@ font-size:14px;
 
 /* HEADER */
 
-header{
-background:white;
-border-bottom:1px solid #eee;
-position:sticky;
-top:0;
-z-index:1000;
+header {
+    background: white;
+    border-bottom: 1px solid #eee;
+    /* Cambiado a fixed para que el efecto de ocultar sea fluido */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Transición suave para el movimiento */
+    transition: top 0.3s ease-in-out;
 }
 
-.header-container{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 5%;
+/* Esta clase la activará el JavaScript al bajar */
+.header-hidden {
+    top: -150px; 
 }
 
-.logo img{
-height:45px;
+/* El resto de tu código igual */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
 }
 
-.menu ul{
-display:flex;
-list-style:none;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
+.logo img {
+    height: 45px;
 }
 
-.menu li{
-background:#f3f7f6;
-padding:15px;
-border-radius:10px;
-font-size:15px;
-transition:0.3s;
+.menu ul {
+    display: flex;
+    list-style: none;
+    /* Nota: grid-template-columns no hace nada aquí porque usás flex, pero lo mantenemos */
+    gap: 30px;
 }
 
-.menu a{
-text-decoration:none;
-color:#E17070;
-font-weight:600;
-transition:.3s;
+.menu li {
+    background: #f3f7f6;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: 0.3s;
 }
 
-.menu a:hover{
-color:#B44C43;
+.menu a {
+    text-decoration: none;
+    color: #E17070;
+    font-weight: 600;
+    transition: .3s;
 }
 
-.menu li:hover{
-background:#e6efed;
-transform:scale(1.02);
+.menu a:hover {
+    color: #B44C43;
 }
+
+.menu li:hover {
+    background: #e6efed;
+    transform: scale(1.02);
+}
+
+/* Agregado: para que el contenido de la web no se tape por el header fixed */
+body {
+    padding-top: 80px; /* Ajustá esto según el alto de tu header */
+}
+
 
 /* HERO */
 
