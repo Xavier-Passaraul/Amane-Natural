@@ -1,48 +1,45 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-font-family: "Segoe UI", Arial, sans-serif;
-background:#2c3333;
-color:#333;
-line-height:1.6;
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #2c3333;
+    color: #333;
+    line-height: 1.6;
+    /* Espacio para que el header fixed no tape el contenido */
+    padding-top: 110px; 
 }
-
 
 /* TOPBAR */
-
-.topbar{
-background:#A93957;
-color: white;
-text-align:center;
-padding:8px;
-font-size:14px;
+.topbar {
+    background: #A93957;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
 }
 
-/* HEADER */
-
+/* HEADER PRINCIPAL */
 header {
     background: white;
     border-bottom: 1px solid #eee;
-    /* Cambiado a fixed para que el efecto de ocultar sea fluido */
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    /* Transición suave para el movimiento */
-    transition: top 0.3s ease-in-out;
+    /* Usamos transform para que sea más fluido que "top" */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Esta clase la activará el JavaScript al bajar */
+/* Esta clase la pone el JS al bajar */
 .header-hidden {
-    top: -150px; 
+    transform: translateY(-100%);
 }
 
-/* El resto de tu código igual */
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -54,16 +51,16 @@ header {
     height: 45px;
 }
 
+/* MENÚ DESKTOP */
 .menu ul {
     display: flex;
     list-style: none;
-    /* Nota: grid-template-columns no hace nada aquí porque usás flex, pero lo mantenemos */
     gap: 30px;
 }
 
 .menu li {
     background: #f3f7f6;
-    padding: 15px;
+    padding: 12px 20px;
     border-radius: 10px;
     font-size: 15px;
     transition: 0.3s;
@@ -73,11 +70,6 @@ header {
     text-decoration: none;
     color: #E17070;
     font-weight: 600;
-    transition: .3s;
-}
-
-.menu a:hover {
-    color: #B44C43;
 }
 
 .menu li:hover {
@@ -85,316 +77,135 @@ header {
     transform: scale(1.02);
 }
 
-/* Agregado: para que el contenido de la web no se tape por el header fixed */
-body {
-    padding-top: 120px; /* Ajustá esto según el alto de tu header */
+/* BOTÓN HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #E17070;
 }
-
 
 /* HERO */
-
-.hero{
-position:relative;
-width:100%;
-height:100vh;
-overflow:hidden;
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
 }
 
-.hero-video{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-1;
-filter: brightness(0.7); /* mejora visibilidad del texto */
-}
-
-.hero-text{
-position:absolute;
-top:50%;
-left:10%;
-transform:translateY(-50%);
-color:white;
-max-width:500px;
-z-index:2;
-}
-
-.hero-text h1{
-font-size:42px;
-margin-bottom:15px;
-}
-
-.hero-text p{
-margin-bottom:20px;
-font-size:18px;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.35);
-top:0;
-left:0;
-}
-
-.btn{
-background:#E17070;
-color:white;
-padding:12px 25px;
-text-decoration:none;
-border-radius:30px;
-font-weight:bold;
-transition:.3s;
-}
-
-.btn:hover{
-background:#B44C43;
-}
-
-/* BOTON HAMBURGUESA */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .menu {
+.hero-video {
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.7);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: white;
+    max-width: 500px;
+    z-index: 2;
+}
+
+.btn {
+    background: #E17070;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    display: inline-block;
+    transition: .3s;
+}
+
+/* SECCIONES GENERALES */
+section {
+    margin: 40px 5%;
     background: white;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
 
-    display: none;
-  }
+/* CATEGORIAS Y CONSEJOS (GRIDS) */
+.categorias-grid, .articulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
 
-  .menu.active {
-    display: block;
-  }
-
-  .menu ul {
-    flex-direction: column; /* 👈 vertical */
-    gap: 0;
-  }
-
-  .menu li {
-    width: 100%;
+.categoria, article {
+    background: #f7f7f7;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3s;
     text-align: center;
-    border-radius: 0;
-    border-bottom: 1px solid #eee;
-  }
 }
 
-/* CATEGORIAS */
-
-.categorias{
-padding:70px 5%;
-text-align:center;
-}
-
-.categorias h2{
-font-size:32px;
-margin-bottom:40px;
-color:#0a2c6b;
-}
-
-.categorias-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-}
-
-.categoria{
-background:#f7f7f7;
-border-radius:10px;
-overflow:hidden;
-transition:.3s;
-}
-
-.categoria img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.categoria h3{
-padding:15px;
-color:#0a2c6b;
-}
-
-.categoria:hover{
-transform:translateY(-5px);
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* CONSEJOS */
-
-.consejos{
-background:#f5f7fb;
-padding:70px 5%;
-text-align:center;
-}
-
-.consejos h2{
-font-size:32px;
-margin-bottom:40px;
-color:#0a2c6b;
-}
-
-.articulos{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.articulos article{
-background:white;
-border-radius:10px;
-overflow:hidden;
-transition:.3s;
-}
-
-.articulos img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.articulos h3{
-padding:15px;
-color:#0a2c6b;
-}
-
-.articulos p{
-padding:0 15px 15px;
-font-size:14px;
-}
-
-.articulos a{
-display:inline-block;
-margin-bottom:20px;
-color:#1b5ed7;
-font-weight:bold;
-text-decoration:none;
-}
-
-.articulos article:hover{
-transform:translateY(-5px);
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+.categoria img, article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 /* FOOTER */
-
-footer{
-background:#111;
-color:#ddd;
-padding:50px 5%;
+footer {
+    background: #111;
+    color: #ddd;
+    padding: 50px 5%;
 }
 
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:40px;
-margin-bottom:30px;
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 40px;
 }
 
-footer h3{
-margin-bottom:15px;
-color:white;
-}
+footer ul { list-style: none; }
+footer a { color: #E17070; text-decoration: none; }
 
-footer ul{
-list-style:none;
-}
+/* MEDIA QUERIES (MOBILE) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: row; /* Mantiene logo e icono en la misma línea */
+        justify-content: space-between;
+    }
 
-footer ul li{
-margin-bottom:8px;
-}
+    .menu-toggle {
+        display: block; /* Muestra la hamburguesa */
+    }
 
-footer a{
-color:#E17070;
-text-decoration:none;
-font-size:14px;
-}
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        display: none; /* Se activa con la clase .active */
+        border-top: 1px solid #eee;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
 
-footer a:hover{
-color:#B44C43;
-}
+    .menu.active {
+        display: block;
+    }
 
-.copy{
-text-align:center;
-border-top:1px solid #333;
-padding-top:20px;
-font-size:14px;
-}
+    .menu ul {
+        flex-direction: column;
+        gap: 0;
+    }
 
-/* RESPONSIVE */
+    .menu li {
+        width: 100%;
+        border-radius: 0;
+        border-bottom: 1px solid #eee;
+    }
 
-@media(max-width:768px){
-
-.header-container{
-flex-direction:column;
-gap:15px;
-}
-
-.menu ul{
-flex-direction:column;
-gap:10px;
-}
-
-.hero{
-height:350px;
-}
-
-.hero-text h1{
-font-size:28px;
-}
-
-.datos{
-gap:30px;
-}
-
-.producto-detalle{
-grid-template-columns:1fr;
-}
-
-}
-
-/* SECCIONES */
-
-section{
-margin-bottom:60px;
-background:white;
-padding:40px;
-border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-section:hover{
-transform:translateY(-3px);
-}
-
-/* TITULOS */
-
-h1{
-font-size:38px;
-margin-bottom:15px;
-color:#3a6b61;
-}
-
-p{
-font-size:16px;
-color:whitesmoke;
+    .hero { height: 50vh; }
+    .hero-text h1 { font-size: 28px; }
 }
