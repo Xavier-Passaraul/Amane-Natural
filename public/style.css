@@ -1,4 +1,3 @@
-/* 1. RESET Y BASE */
 * {
     margin: 0;
     padding: 0;
@@ -10,10 +9,10 @@ body {
     background: #2c3333;
     color: #333;
     line-height: 1.6;
-    padding-top: 120px; /* Espacio para el header fixed */
+    padding-top: 120px;
 }
 
-/* 2. HEADER Y TOPBAR (CORREGIDOS) */
+/* HEADER Y TOPBAR */
 .topbar {
     background: #A93957;
     color: white;
@@ -34,7 +33,7 @@ header {
 }
 
 .header-hidden {
-    transform: translateY(-100%); /* Oculta todo el header */
+    transform: translateY(-100%);
 }
 
 .header-container {
@@ -48,7 +47,7 @@ header {
     height: 45px;
 }
 
-/* 3. MENÚ DESKTOP */
+/* MENÚ DESKTOP */
 .menu ul {
     display: flex;
     list-style: none;
@@ -67,6 +66,16 @@ header {
     text-decoration: none;
     color: #E17070;
     font-weight: 600;
+    transition: 3s;
+}
+
+.menu a:hover { 
+    color: #B44C43;
+}
+
+.menu li:hover {
+    background: #e6efed;
+    transform: scale(1.02);
 }
 
 .menu-toggle {
@@ -76,13 +85,13 @@ header {
     color: #E17070;
 }
 
-/* 4. HERO (RECUPERADO) */
+/* HERO */
 .hero {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    margin-top: -120px; /* Para que el video empiece desde arriba de todo */
+    margin-top: -120px;
 }
 
 .hero-video {
@@ -109,7 +118,7 @@ header {
 .hero-text h1 {
     font-size: 48px;
     margin-bottom: 15px;
-    color: white; /* Recuperamos el color blanco */
+    color: white;
 }
 
 .hero-text p {
@@ -118,56 +127,155 @@ header {
     color: white;
 }
 
+.hero::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+top:0;
+left:0;
+}
+
+
 .btn {
     background: #E17070;
     color: white;
-    padding: 12px 30px;
+    padding: 12px 25px;
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
-    display: inline-block;
+    /* display: inline-block; */
     transition: .3s;
 }
 
-/* 5. SECCIONES Y GRIDS (RECUPERADOS) */
-section {
+.btn:hover{
+background:#B44C43;
+}
+
+/* SECCIONES Y GRIDS */
+.categorias {
     padding: 70px 5%;
     text-align: center;
 }
 
-/* Títulos de secciones en azul como tenías */
-.categorias h2, .consejos h2 {
+/* Títulos */
+.categorias h2 { 
     font-size: 32px;
     margin-bottom: 40px;
     color: #0a2c6b;
 }
 
-.categorias-grid, .articulos {
+h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: #3a6b61;
+}
+
+p {
+    font-size: 16px;
+    color: whitesmoke;
+}
+
+.categorias-grid { 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
 }
 
-.categoria, article {
-    background: white;
-    border-radius: 14px;
+.categoria {
+    background: #f7f7f7;
+    border-radius: 10px;
     overflow: hidden;
     transition: .3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    /* box-shadow: 0 5px 15px rgba(0,0,0,0.1); */
 }
 
-.categoria img, article img {
+.categoria img { 
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
 }
 
-.categoria h3, article h3 {
-    padding: 20px;
+.categoria h3 {
+    padding: 15px;
     color: #0a2c6b;
 }
 
-/* 6. FOOTER */
+.categoria:hover {
+    transform: translate(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.consejos {
+background: #f5f7fb;
+padding: 70px 5%;
+text-align: center;
+}
+
+.consejos h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0a2c6b;
+}
+
+.articulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+}
+
+.articulos article {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 3s;
+}
+
+.articulos img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.articulos h3 {
+    padding: 15px;
+    color: #0a2c6b;
+}
+
+.articulos p {
+    padding: 0 15px 15px;
+    font-size: 14px;
+}
+
+.articulos a {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #1b5ed7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.articulos article:hover {
+    transform: translate(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 60px;
+    background: white;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+}
+
+section:hover {
+    transform: translate(-3px);
+}
+
+
+/* FOOTER */
 footer {
     background: #111;
     color: #ddd;
@@ -178,18 +286,28 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
+    margin-bottom: 30px;
 }
 
 footer h3 { color: white; margin-bottom: 15px; }
 footer ul { list-style: none; }
+footer ul li { margin-bottom: 8px; }
 footer a { color: #E17070; text-decoration: none; font-size: 14px; }
+footer a:hover { color: #B44C43; }
 
-/* 7. RESPONSIVE MOBILE (CORREGIDO) */
+.copy {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+/*  RESPONSIVE MOBILE */
 @media (max-width: 768px) {
     body { padding-top: 100px; }
 
     .header-container {
-        flex-direction: row; /* Logo izquierda, Hamburguesa derecha */
+        flex-direction: row;
         justify-content: space-between;
     }
 
