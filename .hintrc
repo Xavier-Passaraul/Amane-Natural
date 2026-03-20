@@ -16,12 +16,28 @@
           "video[playsinline]"
         ]
       }
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "backdrop-filter"
+        ]
+      }
     ]
   },
   "browserslist": [
     "defaults",
     "not ie 11",
     "not and_ff <= 147",
-    "not firefox <= 148"
+    "not firefox <= 148",
+    "not ios_saf <= 26.3",
+    "not safari <= 26.3"
   ]
 }

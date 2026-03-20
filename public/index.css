@@ -274,34 +274,6 @@ section:hover {
     transform: translate(-3px);
 }
 
-
-/* FOOTER */
-footer {
-    background: #111;
-    color: #ddd;
-    padding: 50px 5%;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-bottom: 30px;
-}
-
-footer h3 { color: white; margin-bottom: 15px; }
-footer ul { list-style: none; }
-footer ul li { margin-bottom: 8px; }
-footer a { color: #E17070; text-decoration: none; font-size: 14px; }
-footer a:hover { color: #B44C43; }
-
-.copy {
-    text-align: center;
-    border-top: 1px solid #333;
-    padding-top: 20px;
-    font-size: 14px;
-}
-
 /*  RESPONSIVE MOBILE */
 @media (max-width: 768px) {
     body { padding-top: 100px; }
