@@ -42,3 +42,40 @@ document.addEventListener("click", (e) => {
         menu.classList.remove("active");
     }
 });
+
+// Función para forzar el video del Hero
+const setupHeroVideo = () => {
+    const video = document.querySelector('video'); // O usa .tu-clase-video
+    
+    if (video) {
+        // 1. Aseguramos el silencio (regla de oro de los navegadores)
+        video.muted = true;
+        video.setAttribute('muted', ''); 
+        video.playsInline = true;
+
+        // 2. Intentamos reproducir con una promesa
+        const attemptPlay = () => {
+            video.play().catch(error => {
+                console.log("Autoplay bloqueado. Reintentando al interactuar.");
+                
+                // 3. Plan de rescate: reproducir al primer scroll o click del usuario
+                const forcePlay = () => {
+                    video.play();
+                    window.removeEventListener('scroll', forcePlay);
+                    window.removeEventListener('click', forcePlay);
+                };
+                window.addEventListener('scroll', forcePlay, { once: true });
+                window.addEventListener('click', forcePlay, { once: true });
+            });
+        };
+
+        attemptPlay();
+    }
+};
+
+// Ejecutar cuando el DOM esté listo
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupHeroVideo);
+} else {
+    setupHeroVideo();
+}
