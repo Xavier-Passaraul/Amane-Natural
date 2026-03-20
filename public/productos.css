@@ -15,12 +15,18 @@ line-height:1.6;
 
 /* HEADER */
 
-header{
-background:white;
-border-bottom:1px solid #eee;
-position:sticky;
-top:0;
-z-index:1000;
+header {
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    width: 100%;    
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-hidden {
+    transform: translateY(-100%);
 }
 
 .header-container{
@@ -28,6 +34,13 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 5%;
+}
+
+.menu-toggle {
+    display: none;      /* Aquí se oculta en PC */
+    font-size: 28px;
+    cursor: pointer;
+    color: #E17070;
 }
 
 .logo img{
@@ -68,17 +81,19 @@ color:#802D3A;
 
 /* SECCIONES */
 
-section{
-margin-bottom:60px;
-background:#FFD3AC;
-padding:40px;
-border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
+section {
+    margin-bottom: 60px;
+    background: linear-gradient(180deg, #E17070 0%, #FFD1D1 100%);
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
 }
 
-section:hover{
-transform:translateY(-3px);
+section:hover {
+    background: linear-gradient(180deg, #E17070 0%, #FFD1D1 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* TITULOS */
@@ -86,7 +101,7 @@ transform:translateY(-3px);
 h1{
 font-size:38px;
 margin-bottom:15px;
-color:#3a6b61;
+color:#FFFFFF;
 }
 
 h2{
@@ -103,9 +118,12 @@ font-size:16px;
 
 /* PRODUCTOS */
 
-.productos{
-padding:60px 20px;
-text-align:center;
+.productos {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
 }
 
 .productos h1{
@@ -121,18 +139,21 @@ gap:25px;
 }
 
 .producto{
-background:white;
-border-radius:10px;
+background: linear-gradient(145deg, #ffffff 0%, #fff5f5 100%);
+border-radius:12px;
 overflow:hidden;
 text-decoration:none;
 color:#333;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
 transition:0.3s;
 cursor:pointer;
+  border: 1px solid rgba(225, 112, 112, 0.1);
 }
 
 .producto:hover{
-transform:translateY(-5px);
+transform:translateY(-8px);
+background: linear-gradient(145deg, #fff5f5 0%, #ffebeb 100%);
+    box-shadow: 0 12px 20px rgba(225, 112, 112, 0.15);
 }
 
 .producto img{
@@ -343,35 +364,88 @@ color:#A93957;
 
 /* RESPONSIVE */
 
-@media (max-width:768px){
-
-.header-container{
-flex-direction:column;
-gap:15px;
+/* --- MODIFICACIÓN EN HEADER (Líneas 17-23 aprox) --- */
+header {
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: fixed; /* Cambiado de sticky a fixed para que la animación funcione */
+    width: 100%;    /* Asegura el ancho completo */
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out; /* Animación para esconderse */
 }
 
-.menu ul{
-flex-direction:column;
-gap:10px;
+/* Nueva clase para esconder el header con JS */
+.header-hidden {
+    transform: translateY(-100%);
 }
 
-.producto-detalle{
-grid-template-columns:1fr;
-}
+/* --- MODIFICACIÓN EN RESPONSIVE (Líneas 238 en adelante) --- */
+@media (max-width: 768px) {
+    /* Ajuste para que el contenido no quede debajo del header fixed */
+    body {
+        padding-top: 80px; 
+    }
 
-.modal-grid{
-grid-template-columns:1fr;
-}
+    .header-container {
+        flex-direction: row; /* Mantiene logo y hamburguesa alineados */
+        justify-content: space-between;
+        padding: 10px 5%;
+    }
 
-.modal-contenido{
-padding:25px;
-}
+    .menu-toggle {
+        display: block; /* Muestra la hamburguesa en móvil */
+        order: 2;
+    }
 
-h1{
-font-size:30px;
-}
+    .logo {
+        order: 1;
+    }
 
-section{
-padding:30px 20px;
-}
+    /* Estilo del menú desplegable */
+    .menu {
+        display: none; /* Oculto por defecto */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
+
+    /* Clase activa para mostrar el menú */
+    .menu.active {
+        display: block !important;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+    }
+
+    .menu li {
+        width: 90%;
+        margin: 5px 0;
+        text-align: center;
+        background: #FFB6C1; /* Mantiene tu color rosa */
+    }
+
+    /* Ajustes de grillas y modales que ya tenías */
+    .producto-detalle, .modal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-contenido {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 30px 20px;
+    }
 }

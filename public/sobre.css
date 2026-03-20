@@ -1,0 +1,276 @@
+/* --- 1. ESTRUCTURA Y BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #2c3333; /* Tu fondo oscuro */
+    color: #333;
+    line-height: 1.6;
+    padding-top: 90px; /* Evita que el header tape el contenido */
+}
+
+/* --- 2. HEADER DINÁMICO --- */
+header {
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-hidden {
+    transform: translateY(-100%); /* Se esconde al bajar */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+.logo img { height: 50px; }
+
+.menu-toggle {
+    display: none; /* Oculto en PC */
+    font-size: 28px;
+    cursor: pointer;
+    color: #E17070;
+}
+
+/* --- 3. MENÚ NAVEGACIÓN --- */
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu li {
+    background: #FFB6C1; /* Rosa claro botones */
+    padding: 12px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.menu li:hover {
+    background: #fce4e8;
+    transform: scale(1.05);
+}
+
+.menu a {
+    text-decoration: none;
+    color: #802D3A; /* Tono vino */
+    font-weight: 600;
+}
+
+/* --- 4. SECCIONES CON DEGRADADO (Sobre Amane / Ubicación) --- */
+section {
+    margin: 40px auto;
+    max-width: 1100px;
+    background: linear-gradient(180deg, #E17070 0%, #FFD1D1 100%);
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px); /* Elevación sutil sin cambiar color */
+}
+
+h1 { font-size: 38px; color: #FFFFFF; margin-bottom: 15px; text-align: center; }
+h2 { font-size: 28px; color: #802D3A; margin-bottom: 20px; border: none; text-align: center; }
+p { font-size: 17px; margin-bottom: 10px; }
+
+/* --- 5. GRILLA DE PRODUCTOS --- */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.producto {
+    background: linear-gradient(145deg, #ffffff 0%, #fff5f5 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border: 1px solid rgba(225, 112, 112, 0.1);
+    text-align: center;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(225, 112, 112, 0.2);
+}
+
+.producto img { width: 100%; height: 220px; object-fit: cover; }
+
+/* --- 6. FRASE ESTILO LIBRO --- */
+.frase-libro {
+    margin-top: 50px;
+    max-width: 550px;
+    margin-left: auto;
+    text-align: right;
+    padding-right: 25px;
+    border-right: 4px solid #E17070;
+}
+
+.frase-libro p {
+    font-family: "Georgia", serif;
+    font-style: italic;
+    font-size: 19px;
+    color: #444;
+}
+
+.frase-libro .firma {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    color: #802D3A;
+}
+
+/* --- 7. MAPA DE GOOGLE --- */
+.mapa-contenedor {
+    width: 100%;
+    max-width: 950px;
+    margin: 35px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border: 8px solid white;
+}
+
+/* --- 8. MODAL VIDRIO (Glassmorphism) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    -webkit-backdrop-filter: blur(8px); /* Safari */
+    backdrop-filter: blur(8px); /* Estándar */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-contenido {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+/* --- 9. RESPONSIVE MÓVIL --- */
+@media (max-width: 768px) {
+    .header-container { padding: 10px 5%; }
+    .menu-toggle { display: block; }
+    
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; width: 100%;
+        background: white;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
+
+    .menu.active { display: block !important; }
+    
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu li { width: 85%; text-align: center; }
+
+    section { padding: 30px 20px; width: 95%; }
+    
+    .frase-libro { max-width: 100%; text-align: center; border-right: none; border-bottom: 2px solid #E17070; padding-bottom: 15px; }
+}
+
+/* --- LÓGICA DE HEADER QUE SE ESCONDE --- */
+header {
+    position: fixed !important; /* Necesario para que la animación funcione */
+    width: 100%;
+    top: 0;
+    transition: transform 0.3s ease-in-out !important;
+}
+
+.header-hidden {
+    transform: translateY(-100%); /* Lo saca de pantalla al bajar */
+}
+
+/* --- RESPONSIVE: MENÚ HAMBURGUESA --- */
+@media (max-width: 768px) {
+    /* Ajuste para que el contenido no se pegue al header fixed */
+    body { 
+        padding-top: 80px; 
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block !important; /* Muestra el icono ☰ */
+        cursor: pointer;
+    }
+
+    .menu {
+        display: none; /* Oculto por defecto en celular */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    /* Clase que activa el JS al hacer click */
+    .menu.active {
+        display: block !important;
+    }
+
+    .menu ul {
+        flex-direction: column !important;
+        gap: 0 !important;
+        padding: 0;
+    }
+
+    .menu li {
+        width: 100%;
+        border-radius: 0;
+        border-bottom: 1px solid #eee;
+        text-align: center;
+    }
+    
+    /* Ajuste del mapa en celular para que no se desborde */
+    .mapa-contenedor {
+        width: 100%;
+        margin: 20px 0;
+    }
+    
+    .mapa-contenedor iframe {
+        height: 300px; /* Un poco más bajo para pantallas chicas */
+    }
+}
+

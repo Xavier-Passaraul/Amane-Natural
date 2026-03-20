@@ -8,21 +8,23 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="img/fondo.jpg" alt="Amane">
-            </div>
-            <nav class="menu">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="consejos.html">Consejos</a></li>
-                    <li><a href="sobre.html">Sobre Amane</a></li>
-                    <li><a href="masajes.html">Masajes</a></li>
-                </ul>
-            </nav>
+    <header id="main-header">
+    <div class="header-container">
+        <div class="logo">
+            <img src="img/fondo.jpg" alt="Amane">
         </div>
-    </header>
+        <!-- El botón ahora tiene un ID -->
+        <div class="menu-toggle" id="btn-hamburguesa">☰</div>
+        <nav class="menu" id="nav-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="consejos.html">Consejos</a></li>
+                <li><a href="sobre.html">Sobre Amane</a></li>
+                <li><a href="masajes.html">Masajes</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <section class="productos">
         <h1>Nuestros Productos</h1>
@@ -54,38 +56,26 @@
 
             <!-- Producto 3 -->
             <div class="producto" onclick="abrirModal(
-                'Protector Solar', 
+                'Descontracturante', 
                 'img/p3.jpg', 
                 'Protección SPF 50 contra rayos UV. Ideal para uso diario y todo tipo de piel.', 
                 '$4.800,00', 
                 '<li>Protección SPF 50</li><li>No grasoso</li><li>Resistente al agua</li>')">
                 <img src="img/p3.jpg">
-                <h3>Protector Solar</h3>
-                <p>Protección SPF 50 contra rayos UV.</p>
+                <h3>Descontracturante</h3>
+                <p>Ayuda a leciones causadas por esfuerzos fisicos</p>
             </div>
 
             <!-- Producto 4 -->
             <div class="producto" onclick="abrirModal(
-                'Crema Reparadora', 
+                'Crema Reparadora total', 
                 'img/p4.jpg', 
                 'Regenera y nutre la piel dañada con una fórmula rica en lípidos.', 
                 '$5.200,00', 
                 '<li>Regeneración celular</li><li>Nutrición intensa</li>')">
                 <img src="img/p4.jpg">
-                <h3>Crema Reparadora</h3>
+                <h3>Crema Reparadora total</h3>
                 <p>Regenera y nutre la piel dañada.</p>
-            </div>
-
-            <!-- Producto 5 -->
-            <div class="producto" onclick="abrirModal(
-                'Gel Limpiador', 
-                'img/p5.jpg', 
-                'Limpieza profunda para piel grasa sin resecar el rostro.', 
-                '$3.900,00', 
-                '<li>Limpieza profunda</li><li>Control de brillo</li>')">
-                <img src="img/p5.jpg">
-                <h3>Gel Limpiador</h3>
-                <p>Limpieza profunda para piel grasa.</p>
             </div>
         </div>
     </section>
@@ -146,6 +136,6 @@
         <p class="copy">© 2026 AMANE</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="productos.js"></script>
 </body>
 </html>
