@@ -44,7 +44,10 @@ header {
 }
 
 .logo img {
-    height: 45px;
+    width: 150px;
+    height: auto;
+    max-height: 50px;
+    object-fit: contain;
 }
 
 /* MENÚ DESKTOP */
