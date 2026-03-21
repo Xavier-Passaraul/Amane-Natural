@@ -1,48 +1,151 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[TÍTULO DE LA PÁGINA] | [Nombre de tu marca]</title>
-    <style>
-        body  { font-family: Arial, sans-serif; line-height: 1.7; max-width: 900px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; color: #333; }
-        h1, h2, h3 { color: #222; }
-        .box { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin: 25px 0; }
-        ul.check { list-style: none; padding-left: 0; }
-        ul.check li { margin: 12px 0; position: relative; padding-left: 30px; }
-        ul.check li:before { content: "✔"; color: #4caf50; position: absolute; left: 0; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rutina facial | Amane</title>
+
+<link rel="stylesheet" href="hidrata-rutina-masaje.css">
+<link rel="stylesheet" href="footer-chico.css">
 </head>
+
 <body>
 
-    <h1>[Título principal de la página]</h1>
+<a href="#contenido" class="skip-link">Saltar al contenido</a>
 
-    <div class="box">
-        <h2>Introducción / párrafo principal</h2>
-        <p>Aquí va el texto introductorio más importante…</p>
-    </div>
+<header class="hero rutina-hero" role="banner">
+  <h1>Rutina facial diaria ✨</h1>
+</header>
 
-    <div class="box">
-        <h2>Punto importante 1</h2>
-        <p>Explicación…</p>
-        <ul class="check">
-            <li>Beneficio o paso 1</li>
-            <li>Beneficio o paso 2</li>
-        </ul>
-    </div>
+<main id="contenido" class="container" role="main">
 
-    <div class="box">
-        <h2>Punto importante 2</h2>
-        <p>Explicación…</p>
-    </div>
+<!-- INTRO -->
+<section class="section">
+<p>
+Una rutina facial no tiene que ser complicada. Con los pasos correctos y productos adecuados, podés lograr una piel saludable, luminosa y equilibrada 🌸
+</p>
 
-    <!-- Más secciones según necesites -->
+<div class="tip">
+💬 “La constancia en tu rutina vale más que usar mil productos.”
+</div>
+</section>
 
-    <p style="text-align:center; margin-top:50px;">
-        <a href="/productos" style="background:#e91e63; color:white; padding:14px 30px; border-radius:30px; text-decoration:none; font-weight:bold;">
-            Ver productos recomendados →
-        </a>
-    </p>
+<!-- PASO 1 -->
+<section class="section">
+<h2>🧼 Paso 1: Limpieza</h2>
 
+<img src="https://images.unsplash.com/photo-1556228720-195a672e8a03" alt="Limpieza facial">
+
+<p>
+La limpieza elimina impurezas, exceso de grasa y prepara la piel para absorber mejor los productos.
+</p>
+</section>
+
+<!-- PASO 2 -->
+<section class="section">
+<h2>💧 Paso 2: Hidratación</h2>
+
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348" alt="Crema hidratante">
+
+<p>
+Aplicá una 
+<a href="catalogo.html#hidratante" class="product-link">crema hidratante</a> para mantener la piel suave y protegida durante el día 💧
+</p>
+</section>
+
+<!-- PASO 3 -->
+<section class="section">
+<h2>🌙 Paso 3: Tratamiento nocturno</h2>
+
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" alt="Rutina nocturna">
+
+<p>
+Durante la noche, la piel se regenera. Usar una 
+<a href="catalogo.html#granos" class="product-link">crema para granos</a> ayuda a reducir imperfecciones mientras dormís 🌙
+</p>
+</section>
+
+<!-- PASO 4 -->
+<section class="section">
+<h2>☀️ Paso 4: Reparación diaria</h2>
+
+<img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc" alt="Cuidado de la piel de día">
+
+<p>
+Durante el día, protegé tu piel con una 
+<a href="catalogo.html#reparadora" class="product-link">crema reparadora</a> que la mantenga nutrida frente a factores externos.
+</p>
+</section>
+
+<!-- EXTRA -->
+<section class="section">
+<h2>💆‍♀️ Extra: Masaje facial</h2>
+
+<img src="https://images.unsplash.com/photo-1552693673-1bf958298935" alt="Masaje facial">
+
+<p>
+El masaje facial mejora la circulación y potencia la absorción de productos.
+</p>
+
+<div class="tip">
+✨ Tip: 5 minutos al día pueden cambiar completamente tu piel.
+</div>
+</section>
+
+  <section class="section">
+  <h2>🌿 Elegí tu tipo de piel</h2>
+  <p>Cada piel es diferente. Tocá tu tipo de piel para ver la rutina recomendada ✨</p>
+
+  <div class="grid">
+
+    <button class="card skin-btn" data-skin="seca" aria-label="Ver rutina para piel seca">
+      <h3>🌸 Piel seca</h3>
+      <p>Tirante, opaca</p>
+    </button>
+
+    <button class="card skin-btn" data-skin="grasa" aria-label="Ver rutina para piel grasa">
+      <h3>💧 Piel grasa</h3>
+      <p>Brillo, poros visibles</p>
+    </button>
+
+    <button class="card skin-btn" data-skin="mixta" aria-label="Ver rutina para piel mixta">
+      <h3>⚖️ Piel mixta</h3>
+      <p>Zona T grasa</p>
+    </button>
+
+  </div>
+</section>
+  
+<!-- CTA -->
+<section class="section">
+<h2>🌸 Tu rutina empieza hoy</h2>
+
+<p>
+No necesitás complicarte. Con constancia y buenos productos, los resultados llegan.
+</p>
+
+<a href="catalogo.html" class="btn">Ver productos</a>
+</section>
+
+<!-- BOTON VOLVER -->
+<div class="back-home">
+  <a href="index.html" class="back-btn">
+    <span class="arrow">←</span>
+    Volver al inicio
+  </a>
+</div>
+
+</main>
+
+<script src="hidrata-rutina-masaje.js"></script>
+<script src="footer-chico.js"></script>
+
+  <div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true">
+    <span class="close">&times;</span>
+    <div id="modal-text"></div>
+  </div>
+</div>
+  <div id="footer-placeholder"></div>
 </body>
 </html>

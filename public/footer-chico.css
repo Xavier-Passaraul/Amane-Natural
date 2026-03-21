@@ -1,0 +1,75 @@
+:root {
+  --primary-dark: #8b5e3c; /* Poné acá el color marrón de Amane */
+  --primary: #f8c8d1;      /* Poné acá el color rosa de Amane */
+}
+
+* FOOTER NUEVO */
+.footer{
+background:#FFF0F4;
+padding:40px 20px 20px;
+margin-top:60px;
+border-top:1px solid #f1d6dc;
+}
+
+/* CTA */
+.footer-cta{
+text-align:center;
+margin-bottom:30px;
+}
+
+.footer-cta h3{
+color:var(--primary-dark);
+margin-bottom:10px;
+}
+
+.footer-cta p{
+margin-bottom:15px;
+color:#555;
+}
+
+/* GRID */
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:25px;
+margin-bottom:20px;
+}
+
+.footer-grid h4{
+color:var(--primary-dark);
+margin-bottom:10px;
+}
+
+.footer-grid ul{
+list-style:none;
+}
+
+.footer-grid li{
+margin-bottom:6px;
+}
+
+.footer-grid a{
+text-decoration:none;
+color:#555;
+transition:.3s;
+}
+
+.footer-grid a:hover{
+color:var(--primary);
+}
+
+/* COPY */
+.copy{
+text-align:center;
+font-size:14px;
+color:#777;
+border-top:1px solid #eee;
+padding-top:15px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+.footer{
+padding:30px 15px;
+}
+}

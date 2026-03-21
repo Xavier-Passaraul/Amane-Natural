@@ -1,148 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
-    <title>Reserva tu cita - Amane Natural</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masajes | Amane</title>
+
+<link rel="stylesheet" href="hidrata-rutina-masaje.css">
+<link rel="stylesheet" href="footer-chico.css">
 </head>
+
 <body>
-    <header>
 
-<div class="topbar">
-<p>Tu momento de relax empieza aquí</p>
-</div>
+<a href="#contenido" class="skip-link">Saltar al contenido</a>
 
-<div class="header-container">
-
-<div class="logo">
-<img src="img/fondo.jpg" alt="Amane">
-</div>
-
-<nav class="menu">
-<ul>
-<li><a href="productos.html">Productos</a></li>
-<li><a href="consejos.html">Consejos</a></li>
-<li><a href="sobre.html">Sobre Amane</a></li>
-<li><a href="index.html">Inicio</a></li>
-</ul>
-</nav>
-</div>
+<header class="hero masaje-hero">
+  <h1>Masajes que transforman tu cuerpo ✨</h1>
 </header>
 
-<main>
-  <section class="banner">
-    <h1>Relajá tu cuerpo y renová tu energía</h1>
-    <p>Disfrutá una experiencia única de bienestar y relajación.</p>
-    <a href="reservar.html" class="btn-reserv">
-Reservar turno
-</a>
-  </section>
+<main id="contenido" class="container">
 
-  <section class="servicios">
-    <h2>Servicios</h2>
-    <ul>
-      <li>Masaje relajante</li>
-      <li>Masaje descontracturante</li>
-      <li>Masaje cuerpo completo</li>
-      <li>Masaje de espalda</li>
-      <li>Masaje facial</li>
-    </ul>
-  </section>
+<section class="section">
+<p>
+Nuestros masajes están pensados para relajar, aliviar tensiones y reconectar con tu cuerpo 💆‍♀️
+</p>
 
-  <section class="beneficios">
-    <h2>Beneficios</h2>
-    <ul>
-      <li>Reduce el estrés</li>
-      <li>Mejora la circulación</li>
-      <li>Alivia dolores musculares</li>
-      <li>Mejora el sueño</li>
-      <li>Relaja cuerpo y mente</li>
-    </ul>
-  </section>
+<div class="tip">
+💬 “El cuerpo habla… el masaje escucha.”
+</div>
+</section>
 
-  <section class="sobre">
-    <h2>Sobre la masajita</h2>
-    <p>
-      Soy masajista especializada en técnicas de relajación y bienestar.
-      Mi objetivo es ayudarte a liberar tensiones y mejorar tu calidad de vida.
-    </p>
-  </section>
+<!-- SERVICIOS -->
+<section class="section">
+<h2>💆‍♀️ Nuestros masajes</h2>
 
-  <section class="reservas">
-    <h2>Reservá tu turno</h2>
-    <p>Podés reservar tu masaje de forma rápida.</p>
-    <button>Reservar por WhatsApp</button>
-  </section>
+<div class="grid">
 
-  <section class="horarios">
-    <h2>Horarios</h2>
-    <p>Lunes a viernes: 8:00 – 13:00</p>
-    <p>Sábados: 9:00 – 14:00</p>
-  </section>
+<!-- CUERPO COMPLETO -->
+<div class="card">
+<h3>Cuerpo completo</h3>
+<p>Relajación total de pies a cabeza.</p>
+<a href="#" class="btn" onclick="reservar('Cuerpo completo')">Reservar</a>
+</div>
 
-  <section class="opiniones">
-    <h2>Opiniones de clientes</h2>
-    <p>⭐⭐⭐⭐⭐ “Salí totalmente relajado, súper recomendable.”</p>
-    <p>⭐⭐⭐⭐⭐ “Excelente atención y ambiente muy tranquilo.”</p>
-  </section>
+<!-- MANOS -->
+<div class="card">
+<h3>Masaje de manos</h3>
+<p>Alivia tensiones y mejora la circulación.</p>
+<a href="#" class="btn" onclick="reservar('Masaje de manos')">Reservar</a>
+</div>
 
-  <section class="ubicacion">
-    <h2>Ubicación</h2>
-    <p>Villa Mária - Córdoba</p>
-  </section>
+<!-- ROSTRO -->
+<div class="card">
+<h3>Masaje facial</h3>
+<p>Relaja, rejuvenece y mejora la piel.</p>
+<a href="#" class="btn" onclick="reservar('Masaje facial')">Reservar</a>
+</div>
 
-  <!-- 9. Promociones
-  <section class="promociones">
-    <h2>Promociones</h2>
-    <ul>
-      <li>20% de descuento en tu primer masaje</li>
-      <li>2 masajes por precio especial</li>
-      <li>Gift cards para regalar</li>
-    </ul>
-  </section>-->
+<!-- ESPALDA -->
+<div class="card">
+<h3>Espalda completa</h3>
+<p>Ideal para contracturas y estrés.</p>
+<a href="#" class="btn" onclick="reservar('Espalda completa')">Reservar</a>
+</div>
+
+<!-- PIES -->
+<div class="card">
+<h3>Pies cansados</h3>
+<p>Descanso y alivio inmediato.</p>
+<a href="#" class="btn" onclick="reservar('Pies cansados')">Reservar</a>
+</div>
+
+<!-- MASAJE RELAJANTE -->
+<div class="card">
+<h3>Masaje relajante</h3>
+<p>Movimientos suaves que relajan cuero y mente.</p>
+<a href="#" class="btn" onclick="reservar('Cuerpo cansado')">Reservar</a>
+</div>
+
+<!-- FUTURO -->
+<!-- 
+<div class="card">
+<h3>Masaje relajante premium</h3>
+<p>Incluye aromaterapia y música personalizada.</p>
+<a href="#" class="btn">Reservar</a>
+</div>
+-->
+
+</div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="section">
+<h2>🌿 Beneficios</h2>
+
+<div class="grid">
+<div class="card">💆‍♀️ Reduce el estrés</div>
+<div class="card">💧 Mejora la circulación</div>
+<div class="card">✨ Relaja mente y cuerpo</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+<h2>🌸 Regalate un momento</h2>
+
+<p>No es un lujo, es cuidado personal.</p>
+
+<a href="#" class="btn" onclick="reservar('Consulta general')">Reservar turno</a>
+</section>
+
+<!-- VOLVER -->
+<div class="back-home">
+  <a href="index.html" class="back-btn">
+    <span class="arrow">←</span>
+    Volver al inicio
+  </a>
+</div>
 
 </main>
-<footer>
-
-<div class="footer-grid">
-
-<div>
-<h3>Ayuda</h3>
-<ul>
-<li><a href="contacto.html">Contacto</a></li>
-<li><a href="preguntas.html">Preguntas frecuentes</a></li>
-<li><a href="envios.html">Envíos</a></li>
-</ul>
-</div>
-
-<div>
-<h3>Empresa</h3>
-<ul>
-<li><a href="sobre.html">Sobre Amane</a></li>
-</ul>
-</div>
-
-<div>
-<h3>Legal</h3>
-<ul>
-<li><a href="politica.html">Privacidad</a></li>
-<li><a href="terminos.html">Términos</a></li>
-</ul>
-</div>
-
-<div>
-<h3>Redes</h3>
-<ul>
-<li><a href="https://www.instagram.com/amane_natural?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></li>
-<li><a href="#">Facebook</a></li>
-</ul>
-</div>
-
-</div>
-
-<p class="copy">© 2026 AMANE</p>
-
-</footer> 
+<div id="footer-placeholder"></div>
+<script src="hidrata-rutina-masaje.js"></script>
+<script src="footer-chico.js"></script>
 </body>
 </html>
