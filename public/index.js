@@ -43,35 +43,43 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// Función para forzar el video del Hero
-const setupHeroVideo = () => {
-    const video = document.querySelector('video'); // O usa .tu-clase-video
-    
-    if (video) {
-        // 1. Aseguramos el silencio (regla de oro de los navegadores)
-        video.muted = true;
-        video.setAttribute('muted', ''); 
-        video.playsInline = true;
+const video = document.querySelector('.hero-video');
 
-        // 2. Intentamos reproducir con una promesa
-        const attemptPlay = () => {
-            video.play().catch(error => {
-                console.log("Autoplay bloqueado. Reintentando al interactuar.");
-                
-                // 3. Plan de rescate: reproducir al primer scroll o click del usuario
-                const forcePlay = () => {
-                    video.play();
-                    window.removeEventListener('scroll', forcePlay);
-                    window.removeEventListener('click', forcePlay);
-                };
-                window.addEventListener('scroll', forcePlay, { once: true });
-                window.addEventListener('click', forcePlay, { once: true });
-            });
-        };
+if (video) {
+    video.muted = true;
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.autoplay = true;
 
-        attemptPlay();
-    }
-};
+    const playVideo = () => {
+        const p = video.play();
+        if (p !== undefined) {
+            p.catch(() => {});
+        }
+    };
+
+    // 🔥 cuando carga
+    video.addEventListener('loadedmetadata', playVideo);
+    video.addEventListener('canplay', playVideo);
+    video.addEventListener('canplaythrough', playVideo);
+
+    // 🔥 si se pausa SOLO → lo reactivamos
+    video.addEventListener('pause', () => {
+        setTimeout(playVideo, 50);
+    });
+
+    // 🔥 loop manual por si falla
+    video.addEventListener('ended', () => {
+        video.currentTime = 0;
+        playVideo();
+    });
+
+    // 🔥 intento inicial fuerte
+    setInterval(playVideo, 1000);
+}
+
+document.addEventListener("DOMContentLoaded", setupHeroVideo);
+
 
 // Ejecutar cuando el DOM esté listo
 if (document.readyState === 'loading') {
