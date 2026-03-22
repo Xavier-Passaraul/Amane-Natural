@@ -57,10 +57,12 @@ gap:40px;
 
 .menu li{
 background:#FFB6C1;
-padding:15px;
+padding:0px;
 border-radius:10px;
 font-size:17px;
 transition:0.3s;
+overflow: hidden;
+display: flex;
 }
 
 .menu li:hover{
@@ -73,10 +75,15 @@ text-decoration:none;
 color:#802D3A;
 font-weight:600;
 transition:.3s;
+display: block;
+width: 100%;
+padding: 15px;
+text-align: center;
 }
 
 .menu a:hover{
 color:#802D3A;
+transform: scale(1.05);
 }
 
 /* SECCIONES */

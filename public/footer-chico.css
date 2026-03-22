@@ -11,6 +11,10 @@ margin-top:60px;
 border-top:1px solid #f1d6dc;
 }
 
+.btn {
+  color: black;
+}
+
 /* CTA */
 .footer-cta{
 text-align:center;
@@ -50,12 +54,12 @@ margin-bottom:6px;
 
 .footer-grid a{
 text-decoration:none;
-color:#555;
+color: black;
 transition:.3s;
 }
 
 .footer-grid a:hover{
-color:var(--primary);
+color: whitesmoke;
 }
 
 /* COPY */
