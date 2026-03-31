@@ -27,7 +27,7 @@ function comprar() {
 
     var msj = "Hola Amane! Quiero comprar:\n\nProducto: " + n + "\nPrecio: " + p;
 
-    var numero = "549XXXXXXXXXX";
+    var numero = "5493536561455";
 
     var urlFinal = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(msj);
 

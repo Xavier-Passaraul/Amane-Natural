@@ -88,7 +88,7 @@ if(document.querySelector(".skin-btn")){
    WHATSAPP RESERVAS
 ========================= */
 function reservar(servicio){
-  const numero = "549XXXXXXXXXX"; // CAMBIAR
+  const numero = "5493536561455"; // CAMBIAR
   const mensaje = `Hola Amane! Quiero reservar:\n\nServicio: ${servicio}`;
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");
