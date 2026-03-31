@@ -93,3 +93,6 @@ function reservar(servicio){
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");
 }
+
+
+

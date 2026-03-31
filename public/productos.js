@@ -100,3 +100,46 @@ function cerrarModal() {
     }
     document.body.style.overflow = "auto";
 }
+
+
+window.onload = function() {
+    const hash = window.location.hash;
+
+    if (hash === '#crema') {
+        abrirModal(
+            'Crema Hidratante', 
+            'img/crema-hidratante.jpeg', 
+            'Crema Hidratante formulada con el poder del colágeno y ácido hialurónico, garantiza una piel suave, tersa y perfectamente hidratada.', 
+            '$5.000,00', 
+            '<li>Hidratación profunda</li><li>Textura ligera</li><li>Para todo tipo de piel</li><li>Absorción rápida</li>'
+        );
+    } 
+    else if (hash === '#granos') {
+        abrirModal(
+            'Noctéa Balance Repair', 
+            'img/p2.jpg', 
+            'Crema facial nocturna renovadora y reguladora. Formulada con niacinamida, vitamina A y vitamina E para equilibrar la piel.', 
+            '$6.500,00', 
+            '<li>Equilibra la piel</li><li>Mejora la textura</li><li>Reduce imperfecciones</li>'
+        );
+    }
+    else if (hash === '#descontracturante') {
+        abrirModal(
+             'Descontracturante', 
+                'img/p3.jpg', 
+                'Protección SPF 50 contra rayos UV. Ideal para uso diario y todo tipo de piel.', 
+                '$4.800,00', 
+                '<li>Protección SPF 50</li><li>No grasoso</li><li>Resistente al agua</li>'
+        );
+    }
+    else if (hash === '#reparadora') {
+        abrirModal(
+            'Crema Reparadora total', 
+                'img/p4.jpg', 
+                'Regenera y nutre la piel dañada con una fórmula rica en lípidos.', 
+                '$5.200,00', 
+                '<li>Regeneración celular</li><li>Nutrición intensa</li>'
+        );
+    }
+};
+
